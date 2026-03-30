@@ -1,0 +1,33 @@
+[project]
+name = "price-spy"
+version = "0.1.0"
+description = "Telegram bot for monitoring grocery prices across Arbuz.kz and Magnum in Almaty"
+readme = "README.md"
+authors = [
+    { name = "AlnurDev", email = "alnur@comfi.ai" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram~=3.26",
+    "alembic~=1.18",
+    "apscheduler~=3.11",
+    "asyncpg~=0.31.0",
+    "httpx~=0.28",
+    "playwright~=1.50",
+    "playwright-stealth~=1.0.6",
+    "pydantic~=2.12",
+    "pydantic-settings~=2.13",
+    "selectolax~=0.4.7",
+    "sqlalchemy[asyncio]~=2.0.48",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.24,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pytest",
+    "pytest-asyncio",
+]
