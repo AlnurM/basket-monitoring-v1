@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.venv
+__pycache__
+*.pyc
+.ruff_cache
+.planning
+.claude
+.agents
+*.md
+!README.md
+docker-compose.yml
+.dockerignore
