@@ -10,9 +10,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### User Management
 
 - [x] **USER-01**: User can register via /start command in Telegram
-- [ ] **USER-02**: User can select interface language (Russian or English) at registration
-- [ ] **USER-03**: User can switch language at any time via settings
-- [ ] **USER-04**: User can view help with available commands via /help
+- [x] **USER-02**: User can select interface language (Russian or English) at registration
+- [x] **USER-03**: User can switch language at any time via settings
+- [x] **USER-04**: User can view help with available commands via /help
 
 ### Basket Management
 
@@ -149,9 +149,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | USER-01 | Phase 1 | Complete |
-| USER-02 | Phase 1 | Pending |
-| USER-03 | Phase 1 | Pending |
-| USER-04 | Phase 1 | Pending |
+| USER-02 | Phase 1 | Complete |
+| USER-03 | Phase 1 | Complete |
+| USER-04 | Phase 1 | Complete |
 | SCRP-01 | Phase 1 | Complete |
 | SCRP-02 | Phase 1 | Complete |
 | SCRP-03 | Phase 1 | Complete |
