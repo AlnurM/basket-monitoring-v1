@@ -29,12 +29,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can switch interface language at any time and all subsequent messages appear in the new language
   4. Bot is deployed on Railway with PostgreSQL and Playwright running in Docker without crashing
   5. Each scraper engine (Arbuz, Magnum, Kaspi) can fetch a product URL and return a validated price result (name, current price, original price, availability)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Project init, config, DB schema, User model, Alembic migrations, User repository
+- [ ] 01-02-PLAN.md — Scraper engines (Arbuz, Magnum, Kaspi) with API interception, BrowserManager, stealth, orchestration service
+- [ ] 01-03-PLAN.md — Bot skeleton with i18n, /start (language selection), /help, /language handlers, middlewares
+- [ ] 01-04-PLAN.md — Application entry point, startup validation, Docker/Railway infrastructure
 
 ### Phase 2: Basket and Product Management
 **Goal**: Users can create store-specific baskets, add products by URL with validation, and view their basket contents with live prices
@@ -94,7 +95,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure and Scraping Engines | 0/3 | Not started | - |
+| 1. Infrastructure and Scraping Engines | 0/4 | Planned | - |
 | 2. Basket and Product Management | 0/3 | Not started | - |
 | 3. Scheduling and Daily Reports | 0/2 | Not started | - |
 | 4. Analytics, Charts, and Export | 0/3 | Not started | - |
