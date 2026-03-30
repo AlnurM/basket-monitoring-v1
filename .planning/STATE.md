@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-30T17:27:36.447Z"
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-30T17:35:45.544Z"
 last_activity: 2026-03-30
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-30)
 ## Current Position
 
 Phase: 01 (infrastructure-and-scraping-engines) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-03-30
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01 P01 | 6min | 2 tasks | 22 files |
+| Phase 01 P02 | 4min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,9 @@ Recent decisions affecting current work:
 - [Roadmap]: TXUX-01/02 placed in Phase 2 (inline keyboards are basket navigation), TXUX-03 in Phase 4 (bilingual messages are cross-cutting but architectural foundation is Phase 1)
 - [Phase 01]: Used src/ layout for uv_build compatibility instead of flat package at root
 - [Phase 01]: Settings singleton with defaults allows import without .env for dev/test
+- [Phase 01]: Hybrid API interception + DOM fallback for Playwright scrapers (D-01)
+- [Phase 01]: Multi-selector fallback lists for DOM extraction, refined during live testing (D-02)
+- [Phase 01]: selectolax Lexbor for Kaspi SSR parsing (D-03)
 
 ### Pending Todos
 
@@ -77,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-30T17:27:36.444Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-30T17:35:45.541Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None

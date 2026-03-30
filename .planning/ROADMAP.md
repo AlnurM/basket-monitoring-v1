@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Project init, config, DB schema, User model, Alembic migrations, User repository
-- [ ] 01-02-PLAN.md — Scraper engines (Arbuz, Magnum, Kaspi) with API interception, BrowserManager, stealth, orchestration service
+- [x] 01-02-PLAN.md — Scraper engines (Arbuz, Magnum, Kaspi) with API interception, BrowserManager, stealth, orchestration service
 - [ ] 01-03-PLAN.md — Bot skeleton with i18n, /start (language selection), /help, /language handlers, middlewares
 - [ ] 01-04-PLAN.md — Application entry point, startup validation, Docker/Railway infrastructure
 

@@ -36,16 +36,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Scraping
 
-- [ ] **SCRP-01**: Bot scrapes Arbuz.kz product pages via Playwright (handles SPA/403)
-- [ ] **SCRP-02**: Bot scrapes Magnum.kz product pages via Playwright (handles SPA)
-- [ ] **SCRP-03**: Bot scrapes Kaspi.kz/shop product pages via httpx + selectolax (SSR fast-path)
-- [ ] **SCRP-04**: Scraper extracts: current price, original price (if discounted), product name, availability status
-- [ ] **SCRP-05**: Product name is cached after first scrape (no re-extraction needed)
-- [ ] **SCRP-06**: Bot attempts API interception via Playwright network events to find stable JSON endpoints
-- [ ] **SCRP-07**: Scraper uses playwright-stealth and UA rotation for anti-bot evasion
-- [ ] **SCRP-08**: Scraper reuses browser instance across scrape cycle with fresh contexts per store
-- [ ] **SCRP-09**: Scraper runs with parallelism (semaphore: max 3 Playwright, max 10 httpx)
-- [ ] **SCRP-10**: Scraper retries failed requests (3 attempts with exponential backoff)
+- [x] **SCRP-01**: Bot scrapes Arbuz.kz product pages via Playwright (handles SPA/403)
+- [x] **SCRP-02**: Bot scrapes Magnum.kz product pages via Playwright (handles SPA)
+- [x] **SCRP-03**: Bot scrapes Kaspi.kz/shop product pages via httpx + selectolax (SSR fast-path)
+- [x] **SCRP-04**: Scraper extracts: current price, original price (if discounted), product name, availability status
+- [x] **SCRP-05**: Product name is cached after first scrape (no re-extraction needed)
+- [x] **SCRP-06**: Bot attempts API interception via Playwright network events to find stable JSON endpoints
+- [x] **SCRP-07**: Scraper uses playwright-stealth and UA rotation for anti-bot evasion
+- [x] **SCRP-08**: Scraper reuses browser instance across scrape cycle with fresh contexts per store
+- [x] **SCRP-09**: Scraper runs with parallelism (semaphore: max 3 Playwright, max 10 httpx)
+- [x] **SCRP-10**: Scraper retries failed requests (3 attempts with exponential backoff)
 
 ### Price History
 
@@ -152,16 +152,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 | USER-02 | Phase 1 | Pending |
 | USER-03 | Phase 1 | Pending |
 | USER-04 | Phase 1 | Pending |
-| SCRP-01 | Phase 1 | Pending |
-| SCRP-02 | Phase 1 | Pending |
-| SCRP-03 | Phase 1 | Pending |
-| SCRP-04 | Phase 1 | Pending |
-| SCRP-05 | Phase 1 | Pending |
-| SCRP-06 | Phase 1 | Pending |
-| SCRP-07 | Phase 1 | Pending |
-| SCRP-08 | Phase 1 | Pending |
-| SCRP-09 | Phase 1 | Pending |
-| SCRP-10 | Phase 1 | Pending |
+| SCRP-01 | Phase 1 | Complete |
+| SCRP-02 | Phase 1 | Complete |
+| SCRP-03 | Phase 1 | Complete |
+| SCRP-04 | Phase 1 | Complete |
+| SCRP-05 | Phase 1 | Complete |
+| SCRP-06 | Phase 1 | Complete |
+| SCRP-07 | Phase 1 | Complete |
+| SCRP-08 | Phase 1 | Complete |
+| SCRP-09 | Phase 1 | Complete |
+| SCRP-10 | Phase 1 | Complete |
 | INFR-01 | Phase 1 | Pending |
 | INFR-02 | Phase 1 | Complete |
 | INFR-03 | Phase 1 | Pending |
