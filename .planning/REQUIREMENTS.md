@@ -148,13 +148,79 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| *(populated by roadmapper)* | | |
+| USER-01 | Phase 1 | Pending |
+| USER-02 | Phase 1 | Pending |
+| USER-03 | Phase 1 | Pending |
+| USER-04 | Phase 1 | Pending |
+| SCRP-01 | Phase 1 | Pending |
+| SCRP-02 | Phase 1 | Pending |
+| SCRP-03 | Phase 1 | Pending |
+| SCRP-04 | Phase 1 | Pending |
+| SCRP-05 | Phase 1 | Pending |
+| SCRP-06 | Phase 1 | Pending |
+| SCRP-07 | Phase 1 | Pending |
+| SCRP-08 | Phase 1 | Pending |
+| SCRP-09 | Phase 1 | Pending |
+| SCRP-10 | Phase 1 | Pending |
+| INFR-01 | Phase 1 | Pending |
+| INFR-02 | Phase 1 | Pending |
+| INFR-03 | Phase 1 | Pending |
+| INFR-04 | Phase 1 | Pending |
+| INFR-05 | Phase 1 | Pending |
+| INFR-06 | Phase 1 | Pending |
+| INFR-07 | Phase 1 | Pending |
+| BSKT-01 | Phase 2 | Pending |
+| BSKT-02 | Phase 2 | Pending |
+| BSKT-03 | Phase 2 | Pending |
+| BSKT-04 | Phase 2 | Pending |
+| BSKT-05 | Phase 2 | Pending |
+| PROD-01 | Phase 2 | Pending |
+| PROD-02 | Phase 2 | Pending |
+| PROD-03 | Phase 2 | Pending |
+| PROD-04 | Phase 2 | Pending |
+| PROD-05 | Phase 2 | Pending |
+| PROD-06 | Phase 2 | Pending |
+| PROD-07 | Phase 2 | Pending |
+| PROD-08 | Phase 2 | Pending |
+| PROD-09 | Phase 2 | Pending |
+| HIST-01 | Phase 2 | Pending |
+| HIST-02 | Phase 2 | Pending |
+| HIST-03 | Phase 2 | Pending |
+| TXUX-01 | Phase 2 | Pending |
+| TXUX-02 | Phase 2 | Pending |
+| REPT-01 | Phase 3 | Pending |
+| REPT-02 | Phase 3 | Pending |
+| REPT-03 | Phase 3 | Pending |
+| REPT-04 | Phase 3 | Pending |
+| REPT-05 | Phase 3 | Pending |
+| REPT-06 | Phase 3 | Pending |
+| REPT-07 | Phase 3 | Pending |
+| REPT-08 | Phase 3 | Pending |
+| MSCR-01 | Phase 3 | Pending |
+| MSCR-02 | Phase 3 | Pending |
+| MSCR-03 | Phase 3 | Pending |
+| ANLT-01 | Phase 4 | Pending |
+| ANLT-02 | Phase 4 | Pending |
+| ANLT-03 | Phase 4 | Pending |
+| ANLT-04 | Phase 4 | Pending |
+| ANLT-05 | Phase 4 | Pending |
+| CHRT-01 | Phase 4 | Pending |
+| CHRT-02 | Phase 4 | Pending |
+| CHRT-03 | Phase 4 | Pending |
+| CHRT-04 | Phase 4 | Pending |
+| CHRT-05 | Phase 4 | Pending |
+| ALRT-01 | Phase 4 | Pending |
+| ALRT-02 | Phase 4 | Pending |
+| EXPT-01 | Phase 4 | Pending |
+| EXPT-02 | Phase 4 | Pending |
+| EXPT-03 | Phase 4 | Pending |
+| TXUX-03 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 49 total
-- Mapped to phases: 0
-- Unmapped: 49
+- v1 requirements: 67 total
+- Mapped to phases: 67
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-30*
-*Last updated: 2026-03-30 after initial definition*
+*Last updated: 2026-03-30 after roadmap creation*
