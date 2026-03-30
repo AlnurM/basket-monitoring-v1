@@ -9,7 +9,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### User Management
 
-- [ ] **USER-01**: User can register via /start command in Telegram
+- [x] **USER-01**: User can register via /start command in Telegram
 - [ ] **USER-02**: User can select interface language (Russian or English) at registration
 - [ ] **USER-03**: User can switch language at any time via settings
 - [ ] **USER-04**: User can view help with available commands via /help
@@ -106,12 +106,12 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Infrastructure
 
 - [ ] **INFR-01**: Bot runs as single process (bot + scheduler) on Railway
-- [ ] **INFR-02**: PostgreSQL database on Railway for all persistent data
+- [x] **INFR-02**: PostgreSQL database on Railway for all persistent data
 - [ ] **INFR-03**: Playwright runs headless Chromium without GPU/sandbox in Docker container
 - [ ] **INFR-04**: Docker image handles Playwright system dependencies correctly (including /dev/shm)
 - [ ] **INFR-05**: APScheduler uses PostgreSQL jobstore for persistent scheduled tasks
-- [ ] **INFR-06**: Database connection pool is sized to handle concurrent scraping + bot handlers
-- [ ] **INFR-07**: All times handled in Asia/Almaty timezone (Railway runs UTC)
+- [x] **INFR-06**: Database connection pool is sized to handle concurrent scraping + bot handlers
+- [x] **INFR-07**: All times handled in Asia/Almaty timezone (Railway runs UTC)
 
 ## v2 Requirements
 
@@ -148,7 +148,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USER-01 | Phase 1 | Pending |
+| USER-01 | Phase 1 | Complete |
 | USER-02 | Phase 1 | Pending |
 | USER-03 | Phase 1 | Pending |
 | USER-04 | Phase 1 | Pending |
@@ -163,12 +163,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCRP-09 | Phase 1 | Pending |
 | SCRP-10 | Phase 1 | Pending |
 | INFR-01 | Phase 1 | Pending |
-| INFR-02 | Phase 1 | Pending |
+| INFR-02 | Phase 1 | Complete |
 | INFR-03 | Phase 1 | Pending |
 | INFR-04 | Phase 1 | Pending |
 | INFR-05 | Phase 1 | Pending |
-| INFR-06 | Phase 1 | Pending |
-| INFR-07 | Phase 1 | Pending |
+| INFR-06 | Phase 1 | Complete |
+| INFR-07 | Phase 1 | Complete |
 | BSKT-01 | Phase 2 | Pending |
 | BSKT-02 | Phase 2 | Pending |
 | BSKT-03 | Phase 2 | Pending |
