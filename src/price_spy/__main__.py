@@ -217,6 +217,15 @@ async def main() -> None:
 
     logger.info("price-spy starting...")
 
+    # Run Alembic migrations automatically
+    from alembic import command as alembic_command
+    from alembic.config import Config as AlembicConfig
+
+    alembic_cfg = AlembicConfig("alembic.ini")
+    alembic_cfg.set_main_option("sqlalchemy.url", settings.database_url_sync)
+    alembic_command.upgrade(alembic_cfg, "head")
+    logger.info("Alembic migrations applied")
+
     # D-10: Fail fast if any dependency is unavailable
     await validate_startup(settings)
 
