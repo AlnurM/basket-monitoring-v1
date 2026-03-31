@@ -55,12 +55,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Daily Reports
 
-- [ ] **REPT-01**: Bot scrapes all active baskets daily at 07:00 Asia/Almaty
-- [ ] **REPT-02**: Bot sends daily price report to each user at their configured notification time
-- [ ] **REPT-03**: Daily report shows per-item prices with quantity totals
-- [ ] **REPT-04**: Daily report shows basket total and change from previous day
-- [ ] **REPT-05**: Daily report highlights items that changed price (was/became with percentage)
-- [ ] **REPT-06**: Daily report flags out-of-stock items
+- [x] **REPT-01**: Bot scrapes all active baskets daily at 07:00 Asia/Almaty
+- [x] **REPT-02**: Bot sends daily price report to each user at their configured notification time
+- [x] **REPT-03**: Daily report shows per-item prices with quantity totals
+- [x] **REPT-04**: Daily report shows basket total and change from previous day
+- [x] **REPT-05**: Daily report highlights items that changed price (was/became with percentage)
+- [x] **REPT-06**: Daily report flags out-of-stock items
 - [ ] **REPT-07**: User can configure notification time via /notify command
 - [ ] **REPT-08**: Default notification time is 09:00 Asia/Almaty
 
@@ -188,12 +188,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HIST-03 | Phase 2 | Complete |
 | TXUX-01 | Phase 2 | Complete |
 | TXUX-02 | Phase 2 | Complete |
-| REPT-01 | Phase 3 | Pending |
-| REPT-02 | Phase 3 | Pending |
-| REPT-03 | Phase 3 | Pending |
-| REPT-04 | Phase 3 | Pending |
-| REPT-05 | Phase 3 | Pending |
-| REPT-06 | Phase 3 | Pending |
+| REPT-01 | Phase 3 | Complete |
+| REPT-02 | Phase 3 | Complete |
+| REPT-03 | Phase 3 | Complete |
+| REPT-04 | Phase 3 | Complete |
+| REPT-05 | Phase 3 | Complete |
+| REPT-06 | Phase 3 | Complete |
 | REPT-07 | Phase 3 | Pending |
 | REPT-08 | Phase 3 | Pending |
 | MSCR-01 | Phase 3 | Pending |
