@@ -12,15 +12,19 @@ Users get automated daily visibility into what their grocery basket costs across
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Multi-user Telegram bot with registration — Phase 1
+- ✓ Scraping: Playwright for Arbuz.kz and Magnum.kz, httpx+selectolax for Kaspi.kz — Phase 1
+- ✓ Bilingual interface (Russian + English) — Phase 1
+- ✓ Scraper optimizations: API interception, browser reuse, parallelism, retry, stealth — Phase 1
+- ✓ Product name caching after first scrape — Phase 1
+- ✓ Deploy on Railway with PostgreSQL — Phase 1
 
 ### Active
 
-- [ ] Multi-user Telegram bot with registration and personal baskets
+- [ ] Basket management: create, delete, switch active basket, set source (arbuz/magnum)
 - [ ] Basket management: create, delete, switch active basket, set source (arbuz/magnum)
 - [ ] Add products by URL (arbuz.kz, magnum.kz, kaspi.kz/shop) with quantity
 - [ ] URL validation: correct format, correct source for basket type
-- [ ] Scraping: Playwright for Arbuz.kz and Magnum.kz (SPA/403), httpx+selectolax for Kaspi.kz (SSR)
 - [ ] Daily automated scraping at 07:00 Asia/Almaty
 - [ ] Price history storage with original/discount prices and availability
 - [ ] Daily price report sent at user's preferred time
@@ -31,11 +35,7 @@ Users get automated daily visibility into what their grocery basket costs across
 - [ ] CSV export of price history
 - [ ] Configurable notification time per user
 - [ ] Manual scrape trigger with rate limiting (1/hour)
-- [ ] Bilingual interface (Russian + English)
-- [ ] Scraper optimizations: API interception, browser reuse, parallelism, retry, stealth
 - [ ] Price drop alerts (>10% decrease notification)
-- [ ] Product name caching after first scrape
-- [ ] Deploy on Railway with PostgreSQL
 
 ### Out of Scope
 
@@ -92,4 +92,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-30 after initialization*
+*Last updated: 2026-03-31 after Phase 1 completion*
