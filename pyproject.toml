@@ -19,6 +19,7 @@ dependencies = [
     "pydantic~=2.12",
     "pydantic-settings~=2.13",
     "selectolax~=0.4.7",
+    "psycopg2-binary~=2.9",
     "sqlalchemy[asyncio]~=2.0.48",
 ]
 

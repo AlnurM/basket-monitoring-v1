@@ -7,6 +7,7 @@ Startup validation fails fast if any dependency is unavailable (D-10).
 import asyncio
 import logging
 
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
@@ -59,8 +60,13 @@ async def on_startup(dispatcher: object) -> None:
     await browser_manager.start()
     logger.info("BrowserManager started in on_startup")
 
-    # Initialize APScheduler (Pitfall 3: must be inside running event loop)
-    scheduler = AsyncIOScheduler(timezone="Asia/Almaty")
+    # Initialize APScheduler with PostgreSQL jobstore (INFR-05)
+    # Pitfall 3: must be inside running event loop
+    # Pitfall 4: SQLAlchemyJobStore needs sync URL (APScheduler 3.x limitation)
+    jobstores = {
+        "default": SQLAlchemyJobStore(url=settings.database_url_sync),
+    }
+    scheduler = AsyncIOScheduler(timezone="Asia/Almaty", jobstores=jobstores)
     scheduler.add_job(
         daily_scrape,
         trigger=CronTrigger(hour=settings.scrape_daily_hour, minute=0),
