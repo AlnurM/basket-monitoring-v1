@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-from price_spy.bot.handlers import basket, start
+from price_spy.bot.handlers import basket, product, start
 from price_spy.bot.middlewares.db import DbSessionMiddleware
 from price_spy.bot.middlewares.i18n import I18nMiddleware
 from price_spy.config import settings
@@ -29,5 +29,6 @@ def create_dispatcher() -> Dispatcher:
     # Register routers
     dp.include_router(start.router)
     dp.include_router(basket.router)
+    dp.include_router(product.router)
 
     return dp
