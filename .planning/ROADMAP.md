@@ -65,11 +65,11 @@ Plans:
   3. Daily report highlights items that changed price (was/became with percentage) and flags out-of-stock items
   4. User can configure their notification time via /notify command (default 09:00 Asia/Almaty)
   5. User can trigger a manual scrape via /scrape with rate limiting (1/hour) and progress feedback
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — Repository extensions, daily scrape orchestration service, report generation service, message utilities
+- [ ] 03-02-PLAN.md — Scheduler wiring (daily_scrape + deliver_reports jobs), /notify and /scrape handlers, i18n keys, router registration
 
 ### Phase 4: Analytics, Charts, and Export
 **Goal**: Users can compare stores, visualize price trends, receive price drop alerts, and export their data
@@ -97,5 +97,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Infrastructure and Scraping Engines | 0/4 | Planned | - |
 | 2. Basket and Product Management | 0/3 | Planned | - |
-| 3. Scheduling and Daily Reports | 0/2 | Not started | - |
+| 3. Scheduling and Daily Reports | 0/2 | Planned | - |
 | 4. Analytics, Charts, and Export | 0/3 | Not started | - |
