@@ -17,9 +17,25 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     @property
+    def database_url_async(self) -> str:
+        """Async URL for SQLAlchemy async engine (always uses asyncpg)."""
+        url = self.database_url
+        if url.startswith("postgresql://"):
+            url = url.replace("postgresql://", "postgresql+asyncpg://", 1)
+        elif url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+asyncpg://", 1)
+        return url
+
+    @property
     def database_url_sync(self) -> str:
         """Sync URL for APScheduler jobstore (APScheduler 3.x needs sync)."""
-        return self.database_url.replace("+asyncpg", "")
+        url = self.database_url
+        # Strip any async driver suffix
+        url = url.replace("+asyncpg", "")
+        # Normalize postgres:// to postgresql://
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql://", 1)
+        return url
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
