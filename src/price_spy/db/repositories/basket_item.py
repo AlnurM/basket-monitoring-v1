@@ -93,3 +93,9 @@ class BasketItemRepository:
         if item is not None:
             item.name = name
             await self._session.flush()
+
+    async def get_items_by_basket(self, basket_id: int) -> list[BasketItem]:
+        """Get all items in a basket (without price join, for URL extraction)."""
+        stmt = select(BasketItem).where(BasketItem.basket_id == basket_id)
+        result = await self._session.execute(stmt)
+        return list(result.scalars().all())

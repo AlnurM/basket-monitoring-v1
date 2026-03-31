@@ -1,3 +1,5 @@
+import datetime
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -35,3 +37,11 @@ class UserRepository:
             return existing, False
         new_user = await self.create(telegram_id, username, language)
         return new_user, True
+
+    async def get_users_by_notify_time(
+        self, target_time: datetime.time
+    ) -> list[User]:
+        """Get all users whose notify_time matches the given time (minute precision)."""
+        stmt = select(User).where(User.notify_time == target_time)
+        result = await self._session.execute(stmt)
+        return list(result.scalars().all())

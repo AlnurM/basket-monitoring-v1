@@ -75,6 +75,22 @@ class BasketRepository:
         )
         await self._session.flush()
 
+    async def get_all_active_baskets(self) -> list[Basket]:
+        """Get all baskets across all users for daily scraping."""
+        stmt = select(Basket).order_by(Basket.user_id, Basket.id)
+        result = await self._session.execute(stmt)
+        return list(result.scalars().all())
+
+    async def get_user_baskets_for_report(self, user_id: int) -> list[Basket]:
+        """Get all baskets for a user, ordered by creation time (for reports)."""
+        stmt = (
+            select(Basket)
+            .where(Basket.user_id == user_id)
+            .order_by(Basket.created_at)
+        )
+        result = await self._session.execute(stmt)
+        return list(result.scalars().all())
+
     async def delete(self, basket_id: int) -> None:
         await self._session.execute(
             delete(Basket).where(Basket.id == basket_id)
