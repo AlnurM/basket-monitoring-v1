@@ -61,8 +61,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **REPT-04**: Daily report shows basket total and change from previous day
 - [x] **REPT-05**: Daily report highlights items that changed price (was/became with percentage)
 - [x] **REPT-06**: Daily report flags out-of-stock items
-- [ ] **REPT-07**: User can configure notification time via /notify command
-- [ ] **REPT-08**: Default notification time is 09:00 Asia/Almaty
+- [x] **REPT-07**: User can configure notification time via /notify command
+- [x] **REPT-08**: Default notification time is 09:00 Asia/Almaty
 
 ### Price Analytics
 
@@ -93,9 +93,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Manual Scraping
 
-- [ ] **MSCR-01**: User can trigger manual scrape via /scrape command
-- [ ] **MSCR-02**: Manual scrape is rate-limited to once per hour per user
-- [ ] **MSCR-03**: Bot shows progress feedback during manual scrape
+- [x] **MSCR-01**: User can trigger manual scrape via /scrape command
+- [x] **MSCR-02**: Manual scrape is rate-limited to once per hour per user
+- [x] **MSCR-03**: Bot shows progress feedback during manual scrape
 
 ### Telegram UX
 
@@ -194,11 +194,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REPT-04 | Phase 3 | Complete |
 | REPT-05 | Phase 3 | Complete |
 | REPT-06 | Phase 3 | Complete |
-| REPT-07 | Phase 3 | Pending |
-| REPT-08 | Phase 3 | Pending |
-| MSCR-01 | Phase 3 | Pending |
-| MSCR-02 | Phase 3 | Pending |
-| MSCR-03 | Phase 3 | Pending |
+| REPT-07 | Phase 3 | Complete |
+| REPT-08 | Phase 3 | Complete |
+| MSCR-01 | Phase 3 | Complete |
+| MSCR-02 | Phase 3 | Complete |
+| MSCR-03 | Phase 3 | Complete |
 | ANLT-01 | Phase 4 | Pending |
 | ANLT-02 | Phase 4 | Pending |
 | ANLT-03 | Phase 4 | Pending |

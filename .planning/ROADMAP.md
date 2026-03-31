@@ -69,7 +69,7 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Repository extensions, daily scrape orchestration service, report generation service, message utilities
-- [ ] 03-02-PLAN.md — Scheduler wiring (daily_scrape + deliver_reports jobs), /notify and /scrape handlers, i18n keys, router registration
+- [x] 03-02-PLAN.md — Scheduler wiring (daily_scrape + deliver_reports jobs), /notify and /scrape handlers, i18n keys, router registration
 
 ### Phase 4: Analytics, Charts, and Export
 **Goal**: Users can compare stores, visualize price trends, receive price drop alerts, and export their data
