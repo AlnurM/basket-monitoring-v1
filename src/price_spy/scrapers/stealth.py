@@ -32,5 +32,13 @@ def random_viewport() -> dict[str, int]:
 
 
 async def apply_stealth(page: Page) -> None:
-    """Apply playwright-stealth patches to a page."""
-    await stealth_async(page)
+    """Apply playwright-stealth patches to a page.
+
+    NOTE: playwright-stealth 1.0.6 breaks rendering on some SPA sites
+    (Arbuz.kz, Magnum.kz). Disabled until a compatible version is available.
+    The UA rotation and viewport randomization in BrowserManager.new_context()
+    provide sufficient fingerprint variation for these sites.
+    """
+    # Disabled: stealth_async breaks SPA rendering on target sites.
+    # await stealth_async(page)
+    pass

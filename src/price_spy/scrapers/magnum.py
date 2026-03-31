@@ -77,6 +77,19 @@ class MagnumScraper(BaseScraper):
             await apply_stealth(page)
             page.on("response", capture_response)
 
+            # First visit magnum.kz to handle city selection gate
+            await page.goto(
+                "https://magnum.kz", wait_until="domcontentloaded", timeout=settings.scrape_timeout
+            )
+            # Dismiss city modal by clicking Almaty if visible
+            try:
+                city_link = page.locator('a.city-choice__city:has-text("Алматы")')
+                if await city_link.count() > 0:
+                    await city_link.click(force=True)
+                    await page.wait_for_timeout(1000)
+            except Exception:
+                pass
+
             await page.goto(
                 url, wait_until="networkidle", timeout=settings.scrape_timeout
             )

@@ -93,11 +93,8 @@ class ScraperService:
                 error=f"Unrecognized URL format: {url}",
             )
 
-        semaphore = (
-            self._httpx_semaphore
-            if source == "kaspi"
-            else self._playwright_semaphore
-        )
+        # All scrapers now use Playwright (Kaspi prices require JS)
+        semaphore = self._playwright_semaphore
         scraper = self._scrapers[source]
 
         # SCRP-05: Check name cache before scraping

@@ -17,26 +17,25 @@ ARBUZ_URL_PATTERN = re.compile(
     r"https?://arbuz\.kz/ru/\w+/catalog/item/(\d+)-[\w-]+"
 )
 
-# Multi-selector fallback lists (D-02: will be refined during live testing)
+# Multi-selector fallback lists (refined from live Arbuz.kz inspection 2026-03-31)
 PRICE_SELECTORS = [
-    '[data-testid="price"]',
+    ".product-card-price-actual",
     ".product-price",
+    '[data-testid="price"]',
     ".price-current",
     '[class*="price"] [class*="current"]',
-    ".product-block__price",
 ]
 ORIGINAL_PRICE_SELECTORS = [
+    ".product-card-old-price",
     ".old-price",
     ".crossed-price",
     '[class*="price"] [class*="old"]',
-    '[class*="price"] s',
     "del",
 ]
 NAME_SELECTORS = [
     "h1",
     ".product-title",
     '[data-testid="product-name"]',
-    ".product-block__title",
 ]
 
 
