@@ -209,22 +209,7 @@ async def main() -> None:
 
     Sequence: validate -> create bot/dp -> register hooks -> start polling.
     """
-    # Configure logging
-    logging.basicConfig(
-        level=getattr(logging, settings.log_level.upper(), logging.INFO),
-        format="%(asctime)s %(levelname)-8s %(name)s: %(message)s",
-    )
-
     logger.info("price-spy starting...")
-
-    # Run Alembic migrations automatically
-    from alembic import command as alembic_command
-    from alembic.config import Config as AlembicConfig
-
-    alembic_cfg = AlembicConfig("alembic.ini")
-    alembic_cfg.set_main_option("sqlalchemy.url", settings.database_url_sync)
-    alembic_command.upgrade(alembic_cfg, "head")
-    logger.info("Alembic migrations applied")
 
     # D-10: Fail fast if any dependency is unavailable
     await validate_startup(settings)
@@ -243,5 +228,21 @@ async def main() -> None:
     await dp.start_polling(bot)
 
 
+def _run_migrations() -> None:
+    """Run Alembic migrations before starting the async event loop."""
+    from alembic import command as alembic_command
+    from alembic.config import Config as AlembicConfig
+
+    alembic_cfg = AlembicConfig("alembic.ini")
+    alembic_cfg.set_main_option("sqlalchemy.url", settings.database_url_sync)
+    alembic_command.upgrade(alembic_cfg, "head")
+    logger.info("Alembic migrations applied")
+
+
 if __name__ == "__main__":
+    logging.basicConfig(
+        level=getattr(logging, settings.log_level.upper(), logging.INFO),
+        format="%(asctime)s %(levelname)-8s %(name)s: %(message)s",
+    )
+    _run_migrations()
     asyncio.run(main())
