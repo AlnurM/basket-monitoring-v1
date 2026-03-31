@@ -18,6 +18,8 @@ STRINGS: dict[str, str] = {
         "/list - Items in current basket\n"
         "/prices - Current prices\n"
         "/remove - Remove an item\n"
+        "/notify - Notification time\n"
+        "/scrape - Manual price scrape\n"
         "\n"
         "To add a product, just send its URL."
     ),
@@ -82,4 +84,18 @@ STRINGS: dict[str, str] = {
     "btn_prev": "< Prev",
     "btn_next": "Next >",
     "page_indicator": "Page {current}/{total}",
+    # Notification settings (/notify)
+    "notify_current": "Current notification time: {time}",
+    "notify_updated": "Notification time set to: {time}",
+    "notify_usage": "Usage: /notify HH:MM\nExample: /notify 08:30",
+    "notify_invalid_format": "Invalid format. Use HH:MM (00:00-23:59).",
+    # Manual scrape (/scrape)
+    "scrape_starting": "Scraping {count} item(s)...",
+    "scrape_complete": "Scrape complete!\n\n{results}",
+    "scrape_item_ok": "{name} — {price} ₸",
+    "scrape_item_fail": "{name} — error",
+    "scrape_item_unavailable": "{name} — out of stock",
+    "scrape_no_active_basket": "No active basket. Use /baskets to select one.",
+    "scrape_empty_basket": "No items in the active basket.",
+    "scrape_rate_limited": "Please wait {minutes} more min. before next scrape.",
 }

@@ -10,6 +10,7 @@ import logging
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
+from apscheduler.triggers.interval import IntervalTrigger
 
 from price_spy.bot.create import create_bot, create_dispatcher
 from price_spy.config import Settings, settings
@@ -50,8 +51,69 @@ async def validate_startup(cfg: Settings) -> None:
 
 
 async def daily_scrape() -> None:
-    """Placeholder for daily scrape job. Implemented in Phase 3."""
-    logger.info("Daily scrape triggered (placeholder -- full implementation in Phase 3)")
+    """REPT-01: Scrape all active baskets daily. Per D-01, D-02."""
+    from price_spy.services.daily_scrape import scrape_all_baskets
+
+    logger.info("Daily scrape starting...")
+    try:
+        results = await scrape_all_baskets()
+        total_items = sum(len(r) for r in results.values())
+        logger.info(
+            "Daily scrape complete: %d baskets, %d items",
+            len(results),
+            total_items,
+        )
+    except Exception:
+        logger.exception("Daily scrape failed")
+
+
+async def deliver_reports() -> None:
+    """REPT-02: Check for users due for notification and send reports. Per D-09."""
+    import datetime
+    import zoneinfo
+
+    from aiogram.exceptions import TelegramForbiddenError, TelegramRetryAfter
+
+    from price_spy.db.engine import async_session
+    from price_spy.db.repositories.user import UserRepository
+    from price_spy.services.message_utils import split_message
+    from price_spy.services.report import generate_user_report
+
+    tz = zoneinfo.ZoneInfo("Asia/Almaty")
+    now = datetime.datetime.now(tz)
+    current_time = now.time().replace(second=0, microsecond=0)
+
+    bot = deliver_reports._bot  # type: ignore[attr-defined]  # Set during main()
+
+    async with async_session() as session:
+        user_repo = UserRepository(session)
+        users = await user_repo.get_users_by_notify_time(current_time)
+
+        if not users:
+            return
+
+        logger.info("Delivering reports to %d user(s) at %s", len(users), current_time)
+
+        for user in users:
+            try:
+                report = await generate_user_report(session, user)
+                if not report:
+                    continue
+                parts = split_message(report)
+                for part in parts:
+                    await bot.send_message(chat_id=user.telegram_id, text=part)
+                await asyncio.sleep(1)  # Flood control: 1s between users (Pitfall 2)
+            except TelegramForbiddenError:
+                logger.warning(
+                    "User %d blocked bot, skipping report", user.telegram_id
+                )
+            except TelegramRetryAfter as e:
+                logger.warning("Rate limited, sleeping %ds", e.retry_after)
+                await asyncio.sleep(e.retry_after)
+            except Exception:
+                logger.exception(
+                    "Failed to deliver report to user %d", user.telegram_id
+                )
 
 
 async def cleanup_old_prices() -> None:
@@ -92,6 +154,14 @@ async def on_startup(dispatcher: object) -> None:
         coalesce=True,
     )
     scheduler.add_job(
+        deliver_reports,
+        trigger=IntervalTrigger(minutes=1),
+        id="deliver_reports",
+        replace_existing=True,
+        misfire_grace_time=60,
+        coalesce=True,
+    )
+    scheduler.add_job(
         cleanup_old_prices,
         trigger=CronTrigger(day=1, hour=3, minute=0),
         id="cleanup_prices",
@@ -99,7 +169,8 @@ async def on_startup(dispatcher: object) -> None:
     )
     scheduler.start()
     logger.info(
-        "APScheduler started (daily scrape at %02d:00 Asia/Almaty, monthly cleanup on 1st at 03:00)",
+        "APScheduler started (daily scrape at %02d:00 Asia/Almaty, "
+        "report delivery every minute, monthly cleanup on 1st at 03:00)",
         settings.scrape_daily_hour,
     )
 
@@ -142,6 +213,7 @@ async def main() -> None:
 
     # Create bot and dispatcher
     bot = create_bot()
+    deliver_reports._bot = bot  # type: ignore[attr-defined]
     dp = create_dispatcher()
 
     # Register lifecycle hooks

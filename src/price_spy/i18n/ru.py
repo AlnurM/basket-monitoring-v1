@@ -18,6 +18,8 @@ STRINGS: dict[str, str] = {
         "/list - Товары текущей корзины\n"
         "/prices - Текущие цены\n"
         "/remove - Удалить товар\n"
+        "/notify - Время уведомлений\n"
+        "/scrape - Ручной парсинг цен\n"
         "\n"
         "Для добавления товара отправьте ссылку на него."
     ),
@@ -82,4 +84,18 @@ STRINGS: dict[str, str] = {
     "btn_prev": "< Пред.",
     "btn_next": "След. >",
     "page_indicator": "Стр. {current}/{total}",
+    # Notification settings (/notify)
+    "notify_current": "Текущее время уведомлений: {time}",
+    "notify_updated": "Время уведомлений установлено: {time}",
+    "notify_usage": "Используйте: /notify ЧЧ:ММ\nПример: /notify 08:30",
+    "notify_invalid_format": "Неверный формат. Используйте ЧЧ:ММ (00:00-23:59).",
+    # Manual scrape (/scrape)
+    "scrape_starting": "Парсинг {count} товар(ов)...",
+    "scrape_complete": "Парсинг завершён!\n\n{results}",
+    "scrape_item_ok": "{name} — {price} ₸",
+    "scrape_item_fail": "{name} — ошибка",
+    "scrape_item_unavailable": "{name} — нет в наличии",
+    "scrape_no_active_basket": "Нет активной корзины. Используйте /baskets чтобы выбрать.",
+    "scrape_empty_basket": "В активной корзине нет товаров.",
+    "scrape_rate_limited": "Подождите ещё {minutes} мин. перед следующим парсингом.",
 }
