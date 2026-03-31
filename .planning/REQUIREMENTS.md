@@ -24,14 +24,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Product Input
 
-- [ ] **PROD-01**: User can add products by pasting arbuz.kz URL (for arbuz baskets)
-- [ ] **PROD-02**: User can add products by pasting magnum.kz or kaspi.kz/shop URL (for magnum baskets)
-- [ ] **PROD-03**: User can specify quantity when adding a product (default: 1)
-- [ ] **PROD-04**: User can add multiple products at once (one URL per line)
-- [ ] **PROD-05**: Bot validates URL format and rejects invalid URLs with clear error message
-- [ ] **PROD-06**: Bot validates URL source matches basket type (arbuz URLs only in arbuz baskets)
+- [x] **PROD-01**: User can add products by pasting arbuz.kz URL (for arbuz baskets)
+- [x] **PROD-02**: User can add products by pasting magnum.kz or kaspi.kz/shop URL (for magnum baskets)
+- [x] **PROD-03**: User can specify quantity when adding a product (default: 1)
+- [x] **PROD-04**: User can add multiple products at once (one URL per line)
+- [x] **PROD-05**: Bot validates URL format and rejects invalid URLs with clear error message
+- [x] **PROD-06**: Bot validates URL source matches basket type (arbuz URLs only in arbuz baskets)
 - [x] **PROD-07**: User can remove a product from their basket
-- [ ] **PROD-08**: User can view basket contents with product names, quantities, and latest prices
+- [x] **PROD-08**: User can view basket contents with product names, quantities, and latest prices
 - [x] **PROD-09**: User is limited to 50 items per basket
 
 ### Scraping
@@ -174,14 +174,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BSKT-03 | Phase 2 | Complete |
 | BSKT-04 | Phase 2 | Complete |
 | BSKT-05 | Phase 2 | Complete |
-| PROD-01 | Phase 2 | Pending |
-| PROD-02 | Phase 2 | Pending |
-| PROD-03 | Phase 2 | Pending |
-| PROD-04 | Phase 2 | Pending |
-| PROD-05 | Phase 2 | Pending |
-| PROD-06 | Phase 2 | Pending |
+| PROD-01 | Phase 2 | Complete |
+| PROD-02 | Phase 2 | Complete |
+| PROD-03 | Phase 2 | Complete |
+| PROD-04 | Phase 2 | Complete |
+| PROD-05 | Phase 2 | Complete |
+| PROD-06 | Phase 2 | Complete |
 | PROD-07 | Phase 2 | Complete |
-| PROD-08 | Phase 2 | Pending |
+| PROD-08 | Phase 2 | Complete |
 | PROD-09 | Phase 2 | Complete |
 | HIST-01 | Phase 2 | Complete |
 | HIST-02 | Phase 2 | Complete |

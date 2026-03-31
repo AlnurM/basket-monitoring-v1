@@ -53,7 +53,7 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — Data layer (models, migration, repositories), UI contracts (callbacks, FSM, keyboards), i18n keys
 - [x] 02-02-PLAN.md — Basket management handlers (/baskets, /new_basket, inline CRUD, dispatcher wiring)
-- [ ] 02-03-PLAN.md — Product handlers (URL input, validation, first-scrape, item display, removal) + price history cleanup job
+- [x] 02-03-PLAN.md — Product handlers (URL input, validation, first-scrape, item display, removal) + price history cleanup job
 
 ### Phase 3: Scheduling and Daily Reports
 **Goal**: Users receive automated daily price reports at their preferred time, with price changes highlighted and out-of-stock items flagged
