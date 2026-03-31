@@ -81,12 +81,12 @@ Plans:
   3. User can view price trend charts (basket total and individual item) as Telegram photos with discount and out-of-stock markers
   4. User receives automatic alerts when a product price drops by more than 10%, with old/new price and percentage
   5. User can export basket price history as a UTF-8 CSV (with BOM for Excel/Cyrillic) containing all required fields
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-- [ ] 04-03: TBD
+- [ ] 04-01-PLAN.md — Repository extensions, analytics service (/changes), comparison service (/compare), matplotlib dependency
+- [ ] 04-02-PLAN.md — Chart service (matplotlib/run_in_executor), CSV export service (UTF-8 BOM), price drop alert service
+- [ ] 04-03-PLAN.md — Bot handlers (/changes, /compare, /chart, /chart_item, /export), router wiring, alert hook, i18n keys, TXUX-03 audit
 
 ## Progress
 
