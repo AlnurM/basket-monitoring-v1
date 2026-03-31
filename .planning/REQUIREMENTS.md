@@ -66,11 +66,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Price Analytics
 
-- [ ] **ANLT-01**: User can view price changes over N days via /changes command
-- [ ] **ANLT-02**: Changes report groups items by: price increased, price decreased, unchanged, unavailable
-- [ ] **ANLT-03**: User can compare Arbuz vs Magnum basket totals via /compare
-- [ ] **ANLT-04**: Comparison shows per-item price differences where same product exists in both stores
-- [ ] **ANLT-05**: Comparison shows total cost difference with percentage
+- [x] **ANLT-01**: User can view price changes over N days via /changes command
+- [x] **ANLT-02**: Changes report groups items by: price increased, price decreased, unchanged, unavailable
+- [x] **ANLT-03**: User can compare Arbuz vs Magnum basket totals via /compare
+- [x] **ANLT-04**: Comparison shows per-item price differences where same product exists in both stores
+- [x] **ANLT-05**: Comparison shows total cost difference with percentage
 
 ### Charts
 
@@ -199,11 +199,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MSCR-01 | Phase 3 | Complete |
 | MSCR-02 | Phase 3 | Complete |
 | MSCR-03 | Phase 3 | Complete |
-| ANLT-01 | Phase 4 | Pending |
-| ANLT-02 | Phase 4 | Pending |
-| ANLT-03 | Phase 4 | Pending |
-| ANLT-04 | Phase 4 | Pending |
-| ANLT-05 | Phase 4 | Pending |
+| ANLT-01 | Phase 4 | Complete |
+| ANLT-02 | Phase 4 | Complete |
+| ANLT-03 | Phase 4 | Complete |
+| ANLT-04 | Phase 4 | Complete |
+| ANLT-05 | Phase 4 | Complete |
 | CHRT-01 | Phase 4 | Pending |
 | CHRT-02 | Phase 4 | Pending |
 | CHRT-03 | Phase 4 | Pending |
