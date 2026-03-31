@@ -101,7 +101,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **TXUX-01**: Bot provides inline keyboard navigation for baskets and actions
 - [x] **TXUX-02**: Basket list shows inline buttons for: list items, view prices, view charts, add item, edit, delete
-- [ ] **TXUX-03**: All user-facing messages are bilingual (Russian and English based on user preference)
+- [x] **TXUX-03**: All user-facing messages are bilingual (Russian and English based on user preference)
 
 ### Infrastructure
 
@@ -214,7 +214,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXPT-01 | Phase 4 | Complete |
 | EXPT-02 | Phase 4 | Complete |
 | EXPT-03 | Phase 4 | Complete |
-| TXUX-03 | Phase 4 | Pending |
+| TXUX-03 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 67 total
