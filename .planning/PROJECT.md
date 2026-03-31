@@ -29,12 +29,14 @@ Users get automated daily visibility into what their grocery basket costs across
 - ✓ Configurable notification time per user — Phase 3
 - ✓ Manual scrape trigger with rate limiting (1/hour) — Phase 3
 
+- ✓ Arbuz vs Magnum comparison (total basket cost + per-item where overlap exists) — Phase 4
+- ✓ Price charts via matplotlib (basket total over time, individual item) — Phase 4
+- ✓ CSV export of price history — Phase 4
+- ✓ Price drop alerts (>10% decrease notification) — Phase 4
+
 ### Active
 
-- [ ] Arbuz vs Magnum comparison (total basket cost + per-item where overlap exists)
-- [ ] Price charts via matplotlib (basket total over time, individual item, comparative)
-- [ ] CSV export of price history
-- [ ] Price drop alerts (>10% decrease notification)
+(All v1 requirements shipped — milestone complete)
 
 ### Out of Scope
 
@@ -91,4 +93,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 3 completion*
+*Last updated: 2026-03-31 after Phase 4 completion — all v1 requirements shipped*
