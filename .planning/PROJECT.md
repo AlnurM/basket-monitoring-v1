@@ -18,19 +18,18 @@ Users get automated daily visibility into what their grocery basket costs across
 - ✓ Scraper optimizations: API interception, browser reuse, parallelism, retry, stealth — Phase 1
 - ✓ Product name caching after first scrape — Phase 1
 - ✓ Deploy on Railway with PostgreSQL — Phase 1
+- ✓ Basket management: create, delete, switch active basket, set source (arbuz/magnum) — Phase 2
+- ✓ Add products by URL (arbuz.kz, magnum.kz, kaspi.kz/shop) with quantity — Phase 2
+- ✓ URL validation: correct format, correct source for basket type — Phase 2
+- ✓ Price history storage with original/discount prices and availability — Phase 2
+- ✓ Inline button navigation for baskets and actions — Phase 2
 
 ### Active
 
-- [ ] Basket management: create, delete, switch active basket, set source (arbuz/magnum)
-- [ ] Basket management: create, delete, switch active basket, set source (arbuz/magnum)
-- [ ] Add products by URL (arbuz.kz, magnum.kz, kaspi.kz/shop) with quantity
-- [ ] URL validation: correct format, correct source for basket type
 - [ ] Daily automated scraping at 07:00 Asia/Almaty
-- [ ] Price history storage with original/discount prices and availability
 - [ ] Daily price report sent at user's preferred time
 - [ ] Price change tracking (was/became over N days)
 - [ ] Arbuz vs Magnum comparison (total basket cost + per-item where overlap exists)
-- [ ] Inline button navigation for baskets and actions
 - [ ] Price charts via matplotlib (basket total over time, individual item, comparative)
 - [ ] CSV export of price history
 - [ ] Configurable notification time per user
@@ -92,4 +91,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 1 completion*
+*Last updated: 2026-03-31 after Phase 2 completion*
