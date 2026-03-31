@@ -54,6 +54,22 @@ async def daily_scrape() -> None:
     logger.info("Daily scrape triggered (placeholder -- full implementation in Phase 3)")
 
 
+async def cleanup_old_prices() -> None:
+    """HIST-03: Delete price_history records older than retention_days. Runs monthly on 1st at 03:00."""
+    from price_spy.db.engine import async_session
+    from price_spy.db.repositories.price_history import PriceHistoryRepository
+
+    async with async_session() as session:
+        repo = PriceHistoryRepository(session)
+        count = await repo.cleanup_old_records(settings.price_history_retention_days)
+        await session.commit()
+        logger.info(
+            "HIST-03: Cleaned up %d old price history records (>%d days)",
+            count,
+            settings.price_history_retention_days,
+        )
+
+
 async def on_startup(dispatcher: object) -> None:
     """Start browser and scheduler. Registered as aiogram startup hook."""
     # Start Playwright browser (SCRP-08: reuse browser instance)
@@ -75,9 +91,15 @@ async def on_startup(dispatcher: object) -> None:
         misfire_grace_time=900,
         coalesce=True,
     )
+    scheduler.add_job(
+        cleanup_old_prices,
+        trigger=CronTrigger(day=1, hour=3, minute=0),
+        id="cleanup_prices",
+        replace_existing=True,
+    )
     scheduler.start()
     logger.info(
-        "APScheduler started (daily scrape at %02d:00 Asia/Almaty)",
+        "APScheduler started (daily scrape at %02d:00 Asia/Almaty, monthly cleanup on 1st at 03:00)",
         settings.scrape_daily_hour,
     )
 
