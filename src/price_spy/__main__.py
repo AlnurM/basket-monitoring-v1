@@ -63,6 +63,15 @@ async def daily_scrape() -> None:
             len(results),
             total_items,
         )
+        # ALRT-01: Check for price drops and send alerts
+        try:
+            from price_spy.services.alerts import check_and_send_alerts
+
+            bot = deliver_reports._bot  # type: ignore[attr-defined]
+            if bot is not None:
+                await check_and_send_alerts(bot)
+        except Exception:
+            logger.exception("Alert check failed")
     except Exception:
         logger.exception("Daily scrape failed")
 
