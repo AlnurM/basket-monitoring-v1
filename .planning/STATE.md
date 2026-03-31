@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-31T06:51:59.554Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-31T06:55:54.915Z"
 last_activity: 2026-03-31
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 7
-  completed_plans: 5
+  completed_plans: 6
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-30)
 ## Current Position
 
 Phase: 02 (basket-and-product-management) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-03-31
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01 P02 | 4min | 3 tasks | 10 files |
 | Phase 01 P03 | 2min | 2 tasks | 11 files |
 | Phase 02 P01 | 4min | 2 tasks | 17 files |
+| Phase 02 P02 | 2min | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,7 @@ Recent decisions affecting current work:
 - [Phase 02]: Used TYPE_CHECKING imports for cross-model relationship annotations to satisfy ruff F821
 - [Phase 02]: LATERAL join in BasketItemRepository for latest price per item avoids N+1
 - [Phase 02]: Short callback prefixes bsk/bact/itm to stay within 64-byte Telegram limit
+- [Phase 02]: Instantiate BasketRepository inside handlers rather than middleware injection
 
 ### Pending Todos
 
@@ -89,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-31T06:51:59.551Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-03-31T06:55:54.911Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
