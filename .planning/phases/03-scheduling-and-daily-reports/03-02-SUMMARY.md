@@ -113,6 +113,14 @@ None - all handlers are fully wired to real services.
 - All scheduler jobs, bot commands, i18n, and router registration in place
 - Ready for Phase 04 (charts, CSV export, comparison features)
 
+## Self-Check: PASSED
+
+- All 6 files verified present on disk
+- Commit af1f997 (Task 1) verified in git log
+- Commit 16be426 (Task 2) verified in git log
+- Verification scripts passed for both tasks
+- Ruff lint check passed on all modified files
+
 ---
 *Phase: 03-scheduling-and-daily-reports*
 *Completed: 2026-03-31*
