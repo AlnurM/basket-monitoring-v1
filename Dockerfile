@@ -1,6 +1,6 @@
 # D-11: Microsoft Playwright image (pre-installed Chromium + system deps)
 # Pin version to match playwright Python package exactly (Pitfall 2)
-FROM mcr.microsoft.com/playwright/python:v1.50.0-noble
+FROM mcr.microsoft.com/playwright/python:v1.58.0-noble
 
 WORKDIR /app
 
