@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-31T06:17:31.625Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-31T06:51:59.554Z"
 last_activity: 2026-03-31
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 7
+  completed_plans: 5
   percent: 0
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-30)
 
 **Core value:** Users get automated daily visibility into what their grocery basket costs across stores, so they can spot price drops, avoid overpaying, and compare where to shop.
-**Current focus:** Phase 01 — infrastructure-and-scraping-engines
+**Current focus:** Phase 02 — basket-and-product-management
 
 ## Current Position
 
-Phase: 2
-Plan: Not started
+Phase: 02 (basket-and-product-management) — EXECUTING
+Plan: 2 of 3
 Status: Ready to execute
 Last activity: 2026-03-31
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01 P01 | 6min | 2 tasks | 22 files |
 | Phase 01 P02 | 4min | 3 tasks | 10 files |
 | Phase 01 P03 | 2min | 2 tasks | 11 files |
+| Phase 02 P01 | 4min | 2 tasks | 17 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Dictionary-based i18n per D-05 with get_text() lookup for RU/EN
 - [Phase 01]: Forced language selection on /start per D-06, handlers check user existence
 - [Phase 01]: Middleware chain: DbSession (outer) then I18n (inner) for DB access in i18n
+- [Phase 02]: Used TYPE_CHECKING imports for cross-model relationship annotations to satisfy ruff F821
+- [Phase 02]: LATERAL join in BasketItemRepository for latest price per item avoids N+1
+- [Phase 02]: Short callback prefixes bsk/bact/itm to stay within 64-byte Telegram limit
 
 ### Pending Todos
 
@@ -85,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-31T06:17:31.621Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-basket-and-product-management/02-CONTEXT.md
+Last session: 2026-03-31T06:51:59.551Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None

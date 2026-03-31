@@ -16,11 +16,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Basket Management
 
-- [ ] **BSKT-01**: User can create a basket with a name and store source (arbuz or magnum)
-- [ ] **BSKT-02**: User can view all their baskets with item counts
-- [ ] **BSKT-03**: User can switch active basket
-- [ ] **BSKT-04**: User can delete a basket
-- [ ] **BSKT-05**: User is limited to 10 baskets maximum
+- [x] **BSKT-01**: User can create a basket with a name and store source (arbuz or magnum)
+- [x] **BSKT-02**: User can view all their baskets with item counts
+- [x] **BSKT-03**: User can switch active basket
+- [x] **BSKT-04**: User can delete a basket
+- [x] **BSKT-05**: User is limited to 10 baskets maximum
 
 ### Product Input
 
@@ -30,9 +30,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **PROD-04**: User can add multiple products at once (one URL per line)
 - [ ] **PROD-05**: Bot validates URL format and rejects invalid URLs with clear error message
 - [ ] **PROD-06**: Bot validates URL source matches basket type (arbuz URLs only in arbuz baskets)
-- [ ] **PROD-07**: User can remove a product from their basket
+- [x] **PROD-07**: User can remove a product from their basket
 - [ ] **PROD-08**: User can view basket contents with product names, quantities, and latest prices
-- [ ] **PROD-09**: User is limited to 50 items per basket
+- [x] **PROD-09**: User is limited to 50 items per basket
 
 ### Scraping
 
@@ -49,9 +49,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Price History
 
-- [ ] **HIST-01**: Every scrape result is stored in price_history with timestamp
-- [ ] **HIST-02**: Price history includes current price, original price, and availability
-- [ ] **HIST-03**: Price history records older than 90 days are automatically cleaned up (monthly)
+- [x] **HIST-01**: Every scrape result is stored in price_history with timestamp
+- [x] **HIST-02**: Price history includes current price, original price, and availability
+- [x] **HIST-03**: Price history records older than 90 days are automatically cleaned up (monthly)
 
 ### Daily Reports
 
@@ -99,8 +99,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Telegram UX
 
-- [ ] **TXUX-01**: Bot provides inline keyboard navigation for baskets and actions
-- [ ] **TXUX-02**: Basket list shows inline buttons for: list items, view prices, view charts, add item, edit, delete
+- [x] **TXUX-01**: Bot provides inline keyboard navigation for baskets and actions
+- [x] **TXUX-02**: Basket list shows inline buttons for: list items, view prices, view charts, add item, edit, delete
 - [ ] **TXUX-03**: All user-facing messages are bilingual (Russian and English based on user preference)
 
 ### Infrastructure
@@ -169,25 +169,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFR-05 | Phase 1 | Pending |
 | INFR-06 | Phase 1 | Complete |
 | INFR-07 | Phase 1 | Complete |
-| BSKT-01 | Phase 2 | Pending |
-| BSKT-02 | Phase 2 | Pending |
-| BSKT-03 | Phase 2 | Pending |
-| BSKT-04 | Phase 2 | Pending |
-| BSKT-05 | Phase 2 | Pending |
+| BSKT-01 | Phase 2 | Complete |
+| BSKT-02 | Phase 2 | Complete |
+| BSKT-03 | Phase 2 | Complete |
+| BSKT-04 | Phase 2 | Complete |
+| BSKT-05 | Phase 2 | Complete |
 | PROD-01 | Phase 2 | Pending |
 | PROD-02 | Phase 2 | Pending |
 | PROD-03 | Phase 2 | Pending |
 | PROD-04 | Phase 2 | Pending |
 | PROD-05 | Phase 2 | Pending |
 | PROD-06 | Phase 2 | Pending |
-| PROD-07 | Phase 2 | Pending |
+| PROD-07 | Phase 2 | Complete |
 | PROD-08 | Phase 2 | Pending |
-| PROD-09 | Phase 2 | Pending |
-| HIST-01 | Phase 2 | Pending |
-| HIST-02 | Phase 2 | Pending |
-| HIST-03 | Phase 2 | Pending |
-| TXUX-01 | Phase 2 | Pending |
-| TXUX-02 | Phase 2 | Pending |
+| PROD-09 | Phase 2 | Complete |
+| HIST-01 | Phase 2 | Complete |
+| HIST-02 | Phase 2 | Complete |
+| HIST-03 | Phase 2 | Complete |
+| TXUX-01 | Phase 2 | Complete |
+| TXUX-02 | Phase 2 | Complete |
 | REPT-01 | Phase 3 | Pending |
 | REPT-02 | Phase 3 | Pending |
 | REPT-03 | Phase 3 | Pending |
