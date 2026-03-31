@@ -20,6 +20,11 @@ STRINGS: dict[str, str] = {
         "/remove - Удалить товар\n"
         "/notify - Время уведомлений\n"
         "/scrape - Ручной парсинг цен\n"
+        "/changes - Изменения цен за N дней\n"
+        "/compare - Сравнение Arbuz vs Magnum\n"
+        "/chart - График стоимости корзины\n"
+        "/chart_item - График цены товара\n"
+        "/export - Экспорт в CSV\n"
         "\n"
         "Для добавления товара отправьте ссылку на него."
     ),
@@ -52,8 +57,8 @@ STRINGS: dict[str, str] = {
     "btn_edit": "Ред.",
     "btn_delete_basket": "Удалить",
     "btn_back": "< Назад",
-    # Stub messages for Phase 4 features
-    "charts_coming_soon": "Графики будут доступны в следующем обновлении.",
+    # Charts button redirect (Phase 4 implemented)
+    "charts_coming_soon": "Используйте /chart для графика корзины или /chart_item для графика товара.",
     "edit_quantity_prompt": 'Отправьте новое количество для "{name}":',
     # Product management
     "send_urls_prompt": (
@@ -98,4 +103,20 @@ STRINGS: dict[str, str] = {
     "scrape_no_active_basket": "Нет активной корзины. Используйте /baskets чтобы выбрать.",
     "scrape_empty_basket": "В активной корзине нет товаров.",
     "scrape_rate_limited": "Подождите ещё {minutes} мин. перед следующим парсингом.",
+    # Analytics (/changes)
+    "changes_no_data": "Недостаточно данных для отчёта.",
+    "changes_invalid_days": "Укажите число дней (1-90). Пример: /changes 7",
+    # Comparison (/compare)
+    "compare_no_data": "Нет данных для сравнения.",
+    # Charts
+    "chart_no_active_basket": "Нет активной корзины. Используйте /baskets.",
+    "chart_generating": "Генерирую график...",
+    "chart_no_data": "Недостаточно данных для графика.",
+    "chart_item_usage": "Использование: /chart_item <номер> [дни]\nПример: /chart_item 3 30",
+    "chart_item_invalid": "Неверный номер товара.",
+    # Export
+    "export_no_data": "Нет данных для экспорта.",
+    "export_generating": "Генерирую CSV...",
+    # Alerts
+    "alert_price_drop_title": "Снижение цен",
 }

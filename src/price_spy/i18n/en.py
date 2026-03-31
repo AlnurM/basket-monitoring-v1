@@ -20,6 +20,11 @@ STRINGS: dict[str, str] = {
         "/remove - Remove an item\n"
         "/notify - Notification time\n"
         "/scrape - Manual price scrape\n"
+        "/changes - Price changes over N days\n"
+        "/compare - Arbuz vs Magnum comparison\n"
+        "/chart - Basket price chart\n"
+        "/chart_item - Item price chart\n"
+        "/export - Export to CSV\n"
         "\n"
         "To add a product, just send its URL."
     ),
@@ -52,8 +57,8 @@ STRINGS: dict[str, str] = {
     "btn_edit": "Edit",
     "btn_delete_basket": "Delete",
     "btn_back": "< Back",
-    # Stub messages for Phase 4 features
-    "charts_coming_soon": "Charts will be available in the next update.",
+    # Charts button redirect (Phase 4 implemented)
+    "charts_coming_soon": "Use /chart for basket chart or /chart_item for item chart.",
     "edit_quantity_prompt": 'Send the new quantity for "{name}":',
     # Product management
     "send_urls_prompt": (
@@ -98,4 +103,20 @@ STRINGS: dict[str, str] = {
     "scrape_no_active_basket": "No active basket. Use /baskets to select one.",
     "scrape_empty_basket": "No items in the active basket.",
     "scrape_rate_limited": "Please wait {minutes} more min. before next scrape.",
+    # Analytics (/changes)
+    "changes_no_data": "Not enough data for report.",
+    "changes_invalid_days": "Specify days (1-90). Example: /changes 7",
+    # Comparison (/compare)
+    "compare_no_data": "No data to compare.",
+    # Charts
+    "chart_no_active_basket": "No active basket. Use /baskets.",
+    "chart_generating": "Generating chart...",
+    "chart_no_data": "Not enough chart data.",
+    "chart_item_usage": "Usage: /chart_item <number> [days]\nExample: /chart_item 3 30",
+    "chart_item_invalid": "Invalid item number.",
+    # Export
+    "export_no_data": "No data to export.",
+    "export_generating": "Generating CSV...",
+    # Alerts
+    "alert_price_drop_title": "Price Drops",
 }
