@@ -47,13 +47,13 @@ Plans:
   3. User can view basket contents showing product names, quantities, and latest scraped prices via inline keyboard navigation
   4. Price history is stored for every scrape with current price, original price, availability, and records older than 90 days are cleaned up
   5. Limits are enforced: max 10 baskets per user, max 50 items per basket
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md — Data layer (models, migration, repositories), UI contracts (callbacks, FSM, keyboards), i18n keys
+- [ ] 02-02-PLAN.md — Basket management handlers (/baskets, /new_basket, inline CRUD, dispatcher wiring)
+- [ ] 02-03-PLAN.md — Product handlers (URL input, validation, first-scrape, item display, removal) + price history cleanup job
 
 ### Phase 3: Scheduling and Daily Reports
 **Goal**: Users receive automated daily price reports at their preferred time, with price changes highlighted and out-of-stock items flagged
@@ -96,6 +96,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure and Scraping Engines | 0/4 | Planned | - |
-| 2. Basket and Product Management | 0/3 | Not started | - |
+| 2. Basket and Product Management | 0/3 | Planned | - |
 | 3. Scheduling and Daily Reports | 0/2 | Not started | - |
 | 4. Analytics, Charts, and Export | 0/3 | Not started | - |
