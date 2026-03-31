@@ -13,7 +13,6 @@ CHROMIUM_ARGS = [
     "--disable-gpu",
     "--disable-dev-shm-usage",
     "--disable-setuid-sandbox",
-    "--single-process",
 ]
 
 
@@ -49,8 +48,10 @@ class BrowserManager:
     @asynccontextmanager
     async def new_context(self) -> AsyncIterator[BrowserContext]:
         """Create a fresh browser context with randomized fingerprint. Always close after use."""
-        if self._browser is None:
-            raise RuntimeError("BrowserManager not started. Call start() first.")
+        # Auto-start if not running (handles restarts and first use)
+        if self._browser is None or not self._browser.is_connected():
+            logger.info("BrowserManager: browser not available, (re)starting...")
+            await self.start()
 
         # Recycle browser if page count exceeded
         if self._page_count >= self._max_pages_before_recycle:
