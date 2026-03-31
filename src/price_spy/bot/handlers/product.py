@@ -4,6 +4,7 @@ import logging
 from decimal import Decimal
 
 from aiogram import F, Router
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 from sqlalchemy.exc import IntegrityError
@@ -236,6 +237,132 @@ async def _process_urls(
         await status_msg.edit_text("\n".join(result_lines))
     else:
         await status_msg.edit_text(get_text("items_empty", lang))
+
+
+# ---------------------------------------------------------------------------
+# Slash commands: /list, /prices, /remove
+# ---------------------------------------------------------------------------
+
+
+@router.message(Command("list"))
+async def cmd_list(
+    message: Message,
+    session: AsyncSession,
+    user: User | None,
+    lang: str,
+    **kwargs: object,
+) -> None:
+    """Show items in the user's active basket."""
+    if user is None:
+        await message.answer(get_text("please_select_language", lang))
+        return
+
+    basket = await BasketRepository(session).get_active_basket(user.id)
+    if basket is None:
+        await message.answer(get_text("error_no_active_basket", lang))
+        return
+
+    item_repo = BasketItemRepository(session)
+    items = await item_repo.get_basket_items_with_latest_price(basket.id)
+
+    if not items:
+        await message.answer(get_text("items_empty", lang))
+        return
+
+    text = await _build_items_text(items, basket.name, lang, page=0)
+    item_objects = [row[0] for row in items]
+    keyboard = items_page_keyboard(item_objects, basket.id, 0, lang)
+    await message.answer(text, reply_markup=keyboard)
+
+
+@router.message(Command("prices"))
+async def cmd_prices(
+    message: Message,
+    session: AsyncSession,
+    user: User | None,
+    lang: str,
+    **kwargs: object,
+) -> None:
+    """Show current prices for items in the user's active basket."""
+    if user is None:
+        await message.answer(get_text("please_select_language", lang))
+        return
+
+    basket = await BasketRepository(session).get_active_basket(user.id)
+    if basket is None:
+        await message.answer(get_text("error_no_active_basket", lang))
+        return
+
+    item_repo = BasketItemRepository(session)
+    items = await item_repo.get_basket_items_with_latest_price(basket.id)
+
+    if not items:
+        await message.answer(get_text("items_empty", lang))
+        return
+
+    text = await _build_items_text(items, basket.name, lang, page=0)
+    item_objects = [row[0] for row in items]
+    keyboard = items_page_keyboard(item_objects, basket.id, 0, lang)
+    await message.answer(text, reply_markup=keyboard)
+
+
+@router.message(Command("remove"))
+async def cmd_remove(
+    message: Message,
+    session: AsyncSession,
+    user: User | None,
+    lang: str,
+    **kwargs: object,
+) -> None:
+    """Remove an item by number: /remove <number>.
+
+    Shows the item list with remove buttons if no number given.
+    """
+    if user is None:
+        await message.answer(get_text("please_select_language", lang))
+        return
+
+    basket = await BasketRepository(session).get_active_basket(user.id)
+    if basket is None:
+        await message.answer(get_text("error_no_active_basket", lang))
+        return
+
+    item_repo = BasketItemRepository(session)
+    items = await item_repo.get_basket_items_with_latest_price(basket.id)
+
+    if not items:
+        await message.answer(get_text("items_empty", lang))
+        return
+
+    # Parse optional item number argument
+    raw_text = message.text or ""
+    parts = raw_text.strip().split(maxsplit=1)
+
+    if len(parts) >= 2:
+        try:
+            item_index = int(parts[1])
+            if item_index < 1 or item_index > len(items):
+                await message.answer(get_text("remove_invalid_number", lang, max=len(items)))
+                return
+
+            item = items[item_index - 1][0]  # BasketItem from tuple
+            name = item.name or item.product_url[:30]
+            from price_spy.bot.keyboards.basket import confirm_remove_item_keyboard
+
+            await message.answer(
+                get_text("confirm_remove_item", lang, name=name),
+                reply_markup=confirm_remove_item_keyboard(basket.id, item.id, lang),
+            )
+            return
+        except ValueError:
+            pass
+
+    # No number given: show usage hint + item list with remove buttons
+    await message.answer(get_text("remove_usage", lang))
+    text = await _build_items_text(items, basket.name, lang, page=0)
+    item_objects = [row[0] for row in items]
+    keyboard = items_page_keyboard(item_objects, basket.id, 0, lang)
+    await message.answer(text, reply_markup=keyboard)
 
 
 # ---------------------------------------------------------------------------

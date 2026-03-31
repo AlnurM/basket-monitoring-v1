@@ -85,6 +85,8 @@ STRINGS: dict[str, str] = {
     "basket_total": "Итого: {total} тг",
     "item_removed": 'Товар "{name}" удален.',
     "confirm_remove_item": 'Удалить "{name}" из корзины?',
+    "remove_usage": "Используйте: /remove <номер>\nПример: /remove 3\n\nВаши товары (нажмите X для удаления):",
+    "remove_invalid_number": "Неверный номер товара. Введите число от 1 до {max}.",
     # Pagination
     "btn_prev": "< Пред.",
     "btn_next": "След. >",

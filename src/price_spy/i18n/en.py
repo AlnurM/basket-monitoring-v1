@@ -85,6 +85,8 @@ STRINGS: dict[str, str] = {
     "basket_total": "Total: {total} KZT",
     "item_removed": 'Item "{name}" removed.',
     "confirm_remove_item": 'Remove "{name}" from basket?',
+    "remove_usage": "Usage: /remove <number>\nExample: /remove 3\n\nHere are your items (tap X to remove):",
+    "remove_invalid_number": "Invalid item number. Enter a number from 1 to {max}.",
     # Pagination
     "btn_prev": "< Prev",
     "btn_next": "Next >",
