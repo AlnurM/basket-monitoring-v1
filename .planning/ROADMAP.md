@@ -85,7 +85,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — Repository extensions, analytics service (/changes), comparison service (/compare), matplotlib dependency
-- [ ] 04-02-PLAN.md — Chart service (matplotlib/run_in_executor), CSV export service (UTF-8 BOM), price drop alert service
+- [x] 04-02-PLAN.md — Chart service (matplotlib/run_in_executor), CSV export service (UTF-8 BOM), price drop alert service
 - [ ] 04-03-PLAN.md — Bot handlers (/changes, /compare, /chart, /chart_item, /export), router wiring, alert hook, i18n keys, TXUX-03 audit
 
 ## Progress

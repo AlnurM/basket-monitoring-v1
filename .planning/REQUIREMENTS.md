@@ -74,22 +74,22 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Charts
 
-- [ ] **CHRT-01**: User can view basket total price chart over time via /chart command
-- [ ] **CHRT-02**: User can view individual product price chart via /chart_item command
-- [ ] **CHRT-03**: Charts default to 30-day period, user can specify custom period
-- [ ] **CHRT-04**: Charts mark discount prices (green dots) and out-of-stock periods (red X)
-- [ ] **CHRT-05**: Charts are generated via matplotlib and sent as Telegram photos
+- [x] **CHRT-01**: User can view basket total price chart over time via /chart command
+- [x] **CHRT-02**: User can view individual product price chart via /chart_item command
+- [x] **CHRT-03**: Charts default to 30-day period, user can specify custom period
+- [x] **CHRT-04**: Charts mark discount prices (green dots) and out-of-stock periods (red X)
+- [x] **CHRT-05**: Charts are generated via matplotlib and sent as Telegram photos
 
 ### Alerts
 
-- [ ] **ALRT-01**: Bot notifies user when a product price drops by more than 10%
-- [ ] **ALRT-02**: Alert includes product name, old price, new price, and percentage drop
+- [x] **ALRT-01**: Bot notifies user when a product price drops by more than 10%
+- [x] **ALRT-02**: Alert includes product name, old price, new price, and percentage drop
 
 ### Export
 
-- [ ] **EXPT-01**: User can export basket price history as CSV via /export
-- [ ] **EXPT-02**: CSV includes: date, basket name, source, product, quantity, unit price, total, availability
-- [ ] **EXPT-03**: CSV is UTF-8 with BOM for Excel compatibility with Cyrillic text
+- [x] **EXPT-01**: User can export basket price history as CSV via /export
+- [x] **EXPT-02**: CSV includes: date, basket name, source, product, quantity, unit price, total, availability
+- [x] **EXPT-03**: CSV is UTF-8 with BOM for Excel compatibility with Cyrillic text
 
 ### Manual Scraping
 
@@ -204,16 +204,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ANLT-03 | Phase 4 | Complete |
 | ANLT-04 | Phase 4 | Complete |
 | ANLT-05 | Phase 4 | Complete |
-| CHRT-01 | Phase 4 | Pending |
-| CHRT-02 | Phase 4 | Pending |
-| CHRT-03 | Phase 4 | Pending |
-| CHRT-04 | Phase 4 | Pending |
-| CHRT-05 | Phase 4 | Pending |
-| ALRT-01 | Phase 4 | Pending |
-| ALRT-02 | Phase 4 | Pending |
-| EXPT-01 | Phase 4 | Pending |
-| EXPT-02 | Phase 4 | Pending |
-| EXPT-03 | Phase 4 | Pending |
+| CHRT-01 | Phase 4 | Complete |
+| CHRT-02 | Phase 4 | Complete |
+| CHRT-03 | Phase 4 | Complete |
+| CHRT-04 | Phase 4 | Complete |
+| CHRT-05 | Phase 4 | Complete |
+| ALRT-01 | Phase 4 | Complete |
+| ALRT-02 | Phase 4 | Complete |
+| EXPT-01 | Phase 4 | Complete |
+| EXPT-02 | Phase 4 | Complete |
+| EXPT-03 | Phase 4 | Complete |
 | TXUX-03 | Phase 4 | Pending |
 
 **Coverage:**
