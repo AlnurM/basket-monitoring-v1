@@ -15,6 +15,7 @@ dependencies = [
     "httpx~=0.28",
     "playwright~=1.50",
     "playwright-stealth~=1.0.6",
+    "setuptools>=75.0,<81",
     "pydantic~=2.12",
     "pydantic-settings~=2.13",
     "selectolax~=0.4.7",
