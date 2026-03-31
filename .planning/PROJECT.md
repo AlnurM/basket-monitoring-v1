@@ -23,17 +23,17 @@ Users get automated daily visibility into what their grocery basket costs across
 - ✓ URL validation: correct format, correct source for basket type — Phase 2
 - ✓ Price history storage with original/discount prices and availability — Phase 2
 - ✓ Inline button navigation for baskets and actions — Phase 2
+- ✓ Daily automated scraping at 07:00 Asia/Almaty — Phase 3
+- ✓ Daily price report sent at user's preferred time — Phase 3
+- ✓ Price change tracking (was/became over N days) — Phase 3
+- ✓ Configurable notification time per user — Phase 3
+- ✓ Manual scrape trigger with rate limiting (1/hour) — Phase 3
 
 ### Active
 
-- [ ] Daily automated scraping at 07:00 Asia/Almaty
-- [ ] Daily price report sent at user's preferred time
-- [ ] Price change tracking (was/became over N days)
 - [ ] Arbuz vs Magnum comparison (total basket cost + per-item where overlap exists)
 - [ ] Price charts via matplotlib (basket total over time, individual item, comparative)
 - [ ] CSV export of price history
-- [ ] Configurable notification time per user
-- [ ] Manual scrape trigger with rate limiting (1/hour)
 - [ ] Price drop alerts (>10% decrease notification)
 
 ### Out of Scope
@@ -91,4 +91,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 2 completion*
+*Last updated: 2026-03-31 after Phase 3 completion*
