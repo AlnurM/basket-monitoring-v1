@@ -4,7 +4,10 @@ import random
 import re
 from dataclasses import dataclass
 
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from price_spy.config import settings
+from price_spy.db.repositories.product_cache import ProductCacheRepository
 from price_spy.scrapers.arbuz import ArbuzScraper
 from price_spy.scrapers.base import BaseScraper
 from price_spy.scrapers.kaspi import KaspiScraper
@@ -60,9 +63,11 @@ def extract_product_id(url: str, source: str) -> str | None:
 
 
 class ScraperService:
-    """Orchestrates scraping with concurrency control and retries per D-08."""
+    """Orchestrates scraping with concurrency control, retries, and name caching (SCRP-05)."""
 
-    def __init__(self) -> None:
+    def __init__(self, session: AsyncSession | None = None) -> None:
+        self._session = session
+        self._cache = ProductCacheRepository(session) if session else None
         self._playwright_semaphore = asyncio.Semaphore(
             settings.scrape_concurrency
         )  # max 3 per SCRP-09
@@ -95,11 +100,22 @@ class ScraperService:
         )
         scraper = self._scrapers[source]
 
+        # SCRP-05: Check name cache before scraping
+        cached_name: str | None = None
+        if self._cache:
+            cached_name = await self._cache.get_name(url)
+
         last_error: Exception | None = None
         for attempt in range(settings.scrape_retry_count):
             try:
                 async with semaphore:
                     data = await scraper.scrape(url)
+                # SCRP-05: Use cached name if available; cache new name if not
+                if cached_name:
+                    data.name = cached_name
+                elif data.name and self._cache:
+                    pid = extract_product_id(url, source) or ""
+                    await self._cache.set_name(url, source, pid, data.name)
                 return ScrapeResult(url=url, source=source, data=data)
             except Exception as e:
                 last_error = e
